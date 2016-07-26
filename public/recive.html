@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Node Stream</title>
+	
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="/resources/socket.io.js"></script>
+</head>
+<body>
+	
+	<image src="" id="play" ></image>
+	<div id="logger"></div>
+	
+	
+	<script type="text/javascript">
+		
+		var socket =  io.connect('https://192.168.1.207');
+		socket.on('stream',function(image){
+			var img = document.getElementById('play');
+			img.src = image;
+			
+			logger(image);
+		} );
+		
+		function logger(msg){
+			$('#logger').text(msg);
+		}
+		
+	</script>
+</body>
+</html>

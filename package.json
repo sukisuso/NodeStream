@@ -1,0 +1,22 @@
+{
+  "name": "NodeStream",
+  "version": "1.0.0",
+  "description": "Project to make a webApp of streaming",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sukisuso/NodeStream.git"
+  },
+  "author": "Jesus Juan Aguilar",
+  "license": "ISC",
+  "homepage": "https://github.com/sukisuso/NodeStream",
+	
+  "dependencies" : {
+	  "express" : "*",
+	  "socket.io" : "*",
+	  "log" : "*"
+  }
+}
