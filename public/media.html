@@ -1,0 +1,105 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Node Stream</title>
+	
+	<script src="/resources/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="/resources/materialize/css/materialize.css">
+	<script type="text/javascript" src="/resources/materialize/js/materialize.min.js"></script>
+	<script type="text/javascript" src="/resources/socket.io.js"></script>
+	<script type="text/javascript" src="/resources/core.js"></script>
+	
+</head>
+<body>
+	
+	<footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h2 class="white-text">Node Streamer</h2>
+              </div>
+			</div>
+		  </div>
+          <div class="footer-copyright">
+            <div class="container">
+            Jesus Juan Aguilar -- jesusjuanaguilar@gmail.com
+            </div>
+          </div>
+        </footer>
+	
+	<div class="row"  id="loginZone">
+    <form class="col s12">
+      <div class="row">
+		  <div class="input-field col s2"></div>
+        <div class="input-field col s3">
+          <input id="login_name" placeholder="UserName" type="text" class="validate">
+        </div>
+        <div class="input-field col s3">
+          <input id="login_pass" placeholder="Password" type="password" class="validate">
+        </div>
+		  <button style="margin-top: 20px;" type="button" onclick="doLogin();" class="btn waves-effect waves-light" >LOGIN</button>
+		  <button style="margin-top: 20px;" type="button" onclick="launchModal();" class="btn waves-effect waves-light" >New account</button>
+      </div>
+		
+    </form>
+  </div>
+	
+	
+	<div class="row" style="margin-top: 20px;">
+      <div id="camara1" class="col s3">
+		<video src="" id="video" style="width:300px; height:150px;" autoplay="true"></video>
+	  </div>
+      <div id="camara2" class="col s3"><image src="" id="play" ></image></div>
+      <div id="camara3" class="col s3">3</div>
+      <div id="camara4" class="col s3">4</div>
+    </div>
+	<div class="row">
+      <div id="camara5" class="col s3">5</div>
+      <div id="camara6" class="col s3">6</div>
+      <div id="camara7" class="col s3">7</div>
+      <div id="camara8" class="col s3">8</div>
+    </div>
+	
+	
+	
+	
+	<!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 class="green-text">New Acount</h4>
+		<div class="row">
+			<div class="input-field col s6">
+          		<input placeholder="UserName" type="text" class="validate">
+        	</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+          		<input placeholder="Email" type="email" class="validate">
+        	</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+          		<input placeholder="Password" type="password" class="validate">
+        	</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s6">
+          		<input placeholder="Repeat Password" type="password" class="validate">
+        	</div>
+		</div>
+    </div>
+    <div class="modal-footer">
+		
+      <a href="#!" onclick="doRegister();" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+		<a href="#!" onclick="$('#modal1').closeModal();" class=" modal-action modal-close waves-effect waves-green btn-flat">Disagree</a>
+    </div>
+  </div>
+	
+	
+	<canvas style="display:none;" id="preview"></canvas>
+</body>
+</html>
