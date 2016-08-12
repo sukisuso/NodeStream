@@ -6,6 +6,8 @@
 var express = require ("express");
 var app = new express();
 var http = require("https");
+var router = require('./servernode/router');
+
 
 var fs = require('fs');
 var Log = require('log'),
@@ -18,10 +20,14 @@ var options = {
   cert: fs.readFileSync('cert/key-cert.pem')
 };
 
+require('./servernode/environment')(app, express);
+
 app.use(express.static(__dirname + '/public'));
 app.get('/', function(){
 	res.redirect('index.html');
 });
+
+router.redirect(app);
 
 var server = http.createServer(options, app).listen(port , function(){
 	logger.info('Server listening in port: ' + port);
